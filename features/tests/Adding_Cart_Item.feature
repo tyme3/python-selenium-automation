@@ -1,14 +1,16 @@
-Feature: Adding an item to the cart
+Feature: Cart tests
 
-  Scenario Outline: Add an item to the cart
-    Given I am on the Target website
-    When I search for "<keyword>"
-    When I add the first item to my cart
-    Then I should see the "<expected_item>" in my cart
+  Scenario: 'Your cart is empty' message is shown for empty cart
+    Given Open target main page
+    When Click on Cart icon
+    Then Verify 'Your cart is empty' message is shown
 
-    Examples:
-      | keyword   | expected_item |
-      | laptop    | laptop        |
-      | orange    | orange        |
-      | lemon     | lemon         |
-
+  Scenario: User can add a product to cart
+    Given Open target main page
+    When Search for water
+    And Click on Add to Cart button
+    And Store product name
+    And Confirm Add to Cart button from side navigation
+    And Open cart page
+    Then Verify cart has 1 item(s)
+    And Verify cart has correct product
