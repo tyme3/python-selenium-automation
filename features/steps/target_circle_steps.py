@@ -11,7 +11,7 @@ def open_target_circle_page(context):
     context.driver.get("https://www.target.com/circle")
 
 
-sleep(6)
+
 
 
 @then('I should see {expected_amount} benefit cells displayed')
