@@ -90,5 +90,5 @@ def verify_item_in_cart(context, expected_item):
         EC.element_to_be_clickable(remove_item_locator)
     ).click()
 
-    context.driver.quit()
+
 
